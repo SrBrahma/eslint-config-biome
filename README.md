@@ -11,12 +11,12 @@
 
 <br/>
 
-! WIP !
+! WIP ! Don't use it yet at all.
 
 ## 💿 Installation
 
 ```bash
-bun install
+npm install -D eslint-plugin-biome
 ```
 
 ## 📖 Usage
