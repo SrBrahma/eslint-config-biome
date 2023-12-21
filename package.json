@@ -9,7 +9,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "bun --watch run src/index.ts",
-    "build": "rimraf dist && npx tscp -p ./tsconfig.build.json",
+    "build": "rimraf dist && npx tsc -p ./tsconfig.build.json",
     "prepublishOnly": "bun run build",
     "pre-commit": "bun test",
     "prepare": "husky install"
