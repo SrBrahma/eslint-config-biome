@@ -11,7 +11,6 @@ jobs:
       - uses: oven-sh/setup-bun@v1
       - run: bun install
       - run: bun test
-      - run: bun run build
       - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_TOKEN }}

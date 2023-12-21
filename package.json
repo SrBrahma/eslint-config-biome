@@ -1,30 +1,29 @@
 {
-  "name": "eslint-config-biome",
-  "version": "0.1.1",
-  "description": "",
-  "module": "src/index.ts",
-  "type": "module",
-  "bin": "dist/bin.js",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "start": "bun --watch run src/index.ts",
-    "build": "rimraf dist && npx tsc -p ./tsconfig.build.json",
-    "prepublishOnly": "bun run build",
-    "pre-commit": "bun test",
-    "prepare": "husky install"
-  },
-  "keywords": [],
-  "license": "MIT",
-  "files": ["dist"],
-  "devDependencies": {
-    "@biomejs/biome": "1.4.1",
-    "@sindresorhus/tsconfig": "^5.0.0",
-    "bun-types": "latest",
-    "eslint-config-gev": "^3.10.5",
-    "husky": "^8.0.1",
-    "lint-staged": "^15.2.0",
-    "rimraf": "^5.0.5",
-    "typescript": "^5.3.3"
-  }
+	"name": "eslint-config-biome",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "Disables all the ESLint rules that have a recommended and equivalent Biome rule",
+	"main": "index.js",
+	"scripts": {
+		"start": "bun --watch run src/index.ts",
+		"pre-commit": "bun test",
+		"prepare": "husky install"
+	},
+	"keywords": [],
+	"license": "MIT",
+	"files": ["index.js"],
+	"devDependencies": {
+		"@biomejs/biome": "1.4.1",
+		"@sindresorhus/tsconfig": "^5.0.0",
+		"@types/jsdom": "^21.1.6",
+		"axios": "^1.6.2",
+		"bun-types": "latest",
+		"eslint-config-gev": "^3.10.5",
+		"husky": "^8.0.1",
+		"jsdom": "^23.0.1",
+		"lint-staged": "^15.2.0",
+		"puppeteer": "^21.6.1",
+		"rimraf": "^5.0.5",
+		"typescript": "^5.3.3"
+	}
 }

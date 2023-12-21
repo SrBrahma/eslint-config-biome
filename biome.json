@@ -6,12 +6,15 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"complexity": {
+				"noForEach": "off"
+			}
 		}
 	},
-  "javascript": {
-    "formatter": {
-      "semicolons": "asNeeded"
-    }
-  }
+	"javascript": {
+		"formatter": {
+			"semicolons": "asNeeded"
+		}
+	}
 }
