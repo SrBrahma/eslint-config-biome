@@ -20,25 +20,25 @@ npm install -D eslint-config-biome
 
 - `.eslintrc.*`: Add `"biome"` as the last item in the `extends` field.
 
-```json
-{
-  "extends": [
-    "other-configs",
-    "biome"
-  ]
-}
-```
+    ```json
+    {
+      "extends": [
+        "other-configs",
+        "biome"
+      ]
+    }
+    ```
 
 - `eslint.config.js`: Import `eslint-config-biome` and have it as the last item in the configuration array
 
-```js
-import eslintConfigBiome from "eslint-config-biome";
-
-export default [
-  otherConfigs,
-  eslintConfigBiome,
-];
-```
+    ```js
+    import eslintConfigBiome from "eslint-config-biome";
+    
+    export default [
+      otherConfigs,
+      eslintConfigBiome,
+    ];
+    ```
 
 ## ℹ️ Info
 
