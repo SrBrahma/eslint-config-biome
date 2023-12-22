@@ -1,7 +1,8 @@
 # Changelog
 
-## 1.0.5
+## 1.0.5-6
 
+- Fix wrong command to install the package in the README. It was written `eslint-plugin-biome` instead of `eslint-config-biome`.
 
 ## 1.0.4
 
