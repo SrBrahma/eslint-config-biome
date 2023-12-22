@@ -10,7 +10,7 @@
 
 <br/>
 
-Disables all the ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/) rule so that you can use both of them ;)
+Disables all the ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/) rule so you can use both of them ;)
 
 ## 💿 Installation
 
