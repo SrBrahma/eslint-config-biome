@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.4
+
+- Change description and repository in package.json
+
 ## 1.0.3
 
 - Improve generated comment

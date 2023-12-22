@@ -1,13 +1,14 @@
 {
 	"name": "eslint-config-biome",
-	"version": "1.0.3",
-	"description": "Disables all the ESLint rules that have a recommended and equivalent Biome rule",
+	"version": "1.0.4",
+	"description": "Disables ESLint rules that have a recommended and equivalent Biome rule",
 	"main": "index.js",
 	"scripts": {
 		"start": "bun --watch run src/index.ts",
 		"pre-commit": "bun test",
 		"prepare": "husky install"
 	},
+	"repository": "SrBrahma/eslint-config-biome",
 	"keywords": [
 		"biome",
 		"eslint-config",
