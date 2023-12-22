@@ -66,6 +66,8 @@ export default [
     "editor.defaultFormatter": "biomejs.biome"
     ```
 
+- Soon there will be a npx tool to disable ESLint rules based on your biome config file, so non-recommended biome rules will also be considered.
+  
 This package had its origin [in this discussion](https://github.com/biomejs/biome/discussions/3#discussioncomment-7876363). Thanks [DaniGuardiola
 ](https://github.com/DaniGuardiola) for [your initial code](https://github.com/biomejs/biome/discussions/3#discussioncomment-7910787)!
 
