@@ -1,5 +1,7 @@
 /**
- * File automatically created TODO write some here
+ * File automatically created by scripts/index.ts.
+ *
+ * These are ESLint rules that have corresponding and recommended Biome rules.
  */
 module.exports = {
 	rules: {

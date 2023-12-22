@@ -61,13 +61,14 @@ const getEslintEquivalentRules = async (): Promise<Array<string>> => {
 		getEslintEquivalentRulesForPlugin(plugin, document),
 	)
 
-	// console.log("ESLint rules:/n", eslintRules)
 	return eslintRules
 }
 
 const writeFile = (rules: Array<string>) => {
 	const text = `/**
- * File automatically created TODO write some here
+ * File automatically created by scripts/index.ts.
+ *
+ * These are ESLint rules that have corresponding and recommended Biome rules.
  */
 module.exports = {
   rules: {
