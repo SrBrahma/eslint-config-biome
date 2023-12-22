@@ -58,14 +58,14 @@ export default [
 
 - In VSCode, to apply Biome and ESLint on save, you should have these in your settings.json:
 
-```json
-"editor.codeActionsOnSave": {
-  "source.fixAll.eslint": "explicit",
-  "source.organizeImports.biome": "explicit",
-  "quickfix.biome": "explicit"
-},
-"editor.defaultFormatter": "biomejs.biome"
-```
+    ```json
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports.biome": "explicit",
+      "quickfix.biome": "explicit"
+    },
+    "editor.defaultFormatter": "biomejs.biome"
+    ```
 
 This package had its origin [in this discussion](https://github.com/biomejs/biome/discussions/3#discussioncomment-7876363).
 
