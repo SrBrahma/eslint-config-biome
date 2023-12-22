@@ -11,7 +11,7 @@
 
 <br/>
 
-Disables all the ESLint rules that have an **equivalent and recommended** Biome rule, so you can use both for better performance.
+Disables all the ESLint rules that have an **equivalent and recommended** [Biome](https://biomejs.dev/) rule, so you can use both for better performance.
 
 Early stage lib, will be improved soon with further improvements such as considering non-recommended Biome rules.
 
