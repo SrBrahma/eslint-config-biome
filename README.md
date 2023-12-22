@@ -1,19 +1,20 @@
 <div align="center">
 
+# eslint-config-biome
+
 [![npm](https://img.shields.io/npm/v/eslint-config-biome)](https://www.npmjs.com/package/eslint-config-biome)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-# eslint-config-biome
 
 <img src="logo.svg" alt="logo" width="200"/>
 
 
+<br/>
+
+Disables ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/), allowing the simultaneous use of Biome and ESLint.
 
 </div>
 
-<br/>
-
-Disables ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/), allowing the simultaneous use of ESLint and Biome.
 
 ## 💿 Installation
 
