@@ -12,8 +12,6 @@
 
 Disables ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/), allowing the simultaneous use of ESLint and Biome. 
 
-The disabled rules include 
-
 ## 💿 Installation
 
 ```bash
