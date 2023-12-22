@@ -52,9 +52,9 @@ export default [
     }],
     ```
 
-    - Being this the last item in the array, this will make sure that other existing overrides before it will have this patch applied. This also overrides any rules that may lie in the root of your .eslintrc under `rules`.
+    - Being it the last item in the array, this makes other existing overrides to have this patch applied. This also overrides any rules that may lie in the root of your .eslintrc under `rules`.
 
-- You should use it together with [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) so formatting rules are also disabled as Biome has almost a 100% compatibility with prettier! You certainly no longer require prettier if you are using Biome.
+- You should use it together with [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) so formatting rules are also disabled as Biome has almost 100% compatibility with prettier! You certainly no longer require prettier if you are using Biome. It may eventually be integrated into this package, so you won't need to install it.
 
 - In VSCode, to apply Biome and ESLint on save, you should have these in your settings.json:
 
