@@ -11,7 +11,7 @@
 
 <br/>
 
-Disables all the ESLint rules that have an **equivalent and recommended** [Biome](https://biomejs.dev/) rule, so you can use both for better performance.
+Disables all the ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/) rule so that you can use both for better performance.
 
 Early stage lib, will be improved soon with further improvements such as considering non-recommended Biome rules.
 
@@ -48,7 +48,7 @@ export default [
 - In your .eslintrc, you can instead have this in `overrides`:
 
 ```
-overrides: [{
+"overrides": [{
   files: ["*.ts", "*.js", "*.tsx", "*.jsx"],
   extends: ["biome"],
 }],
