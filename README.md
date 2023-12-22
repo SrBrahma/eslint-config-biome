@@ -1,5 +1,6 @@
 <div align="center">
 
+<br/>
 <img src="logo.svg" alt="logo" width="250"/>
 
 # eslint-config-biome [![npm](https://img.shields.io/npm/v/eslint-config-biome)](https://www.npmjs.com/package/eslint-config-biome)
