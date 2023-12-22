@@ -5,15 +5,13 @@
 [![npm](https://img.shields.io/npm/v/eslint-config-biome)](https://www.npmjs.com/package/eslint-config-biome)
 [![TypeScript](https://badgen.net/npm/types/env-var)](http://www.typescriptlang.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-[![npm](https://img.shields.io/npm/dm/eslint-config-biome)](https://www.npmjs.com/package/eslint-config-biome)
+<!--- [![npm](https://img.shields.io/npm/dm/eslint-config-biome)](https://www.npmjs.com/package/eslint-config-biome) -->
 
 </div>
 
 <br/>
 
-Disables all the ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/) rule so that you can use both for better performance.
-
-Early stage lib, will be improved soon with further improvements such as considering non-recommended Biome rules.
+Disables all the ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/) rule so that you can use both of them ;)
 
 ## 💿 Installation
 
