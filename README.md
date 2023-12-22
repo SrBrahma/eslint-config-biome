@@ -45,14 +45,14 @@ export default [
 
 - In your .eslintrc, you can instead have this in `overrides`:
 
-```
-"overrides": [{
-  files: ["*.ts", "*.js", "*.tsx", "*.jsx"],
-  extends: ["biome"],
-}],
-```
+    ```
+    "overrides": [{
+      files: ["*.ts", "*.js", "*.tsx", "*.jsx"],
+      extends: ["biome"],
+    }],
+    ```
 
-Being this the last item in the array, this will make sure that other existing overrides before it will have this patch applied. This also overrides any rules that may lie in the root of your .eslintrc under `rules`.
+    - Being this the last item in the array, this will make sure that other existing overrides before it will have this patch applied. This also overrides any rules that may lie in the root of your .eslintrc under `rules`.
 
 - You should use it together with [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) so formatting rules are also disabled as Biome has almost a 100% compatibility with prettier! You certainly no longer require prettier if you are using Biome.
 
