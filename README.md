@@ -15,7 +15,7 @@ Disables all the ESLint rules that have an [**equivalent and recommended**](http
 ## 💿 Installation
 
 ```bash
-npm install -D eslint-plugin-biome
+npm install -D eslint-config-biome
 ```
 
 - `.eslintrc.*`: Add `"biome"` as the last item in the `extends` field.
