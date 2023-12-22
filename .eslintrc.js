@@ -21,9 +21,9 @@ module.exports = {
 				sourceType: "module",
 			},
 		},
+		{
+			files: ["*.ts", "*.js", "*.tsx", "*.jsx"],
+			extends: ["./index.js"],
+		},
 	],
-	ignorePatterns: ["/lib/**/*", "/dist/**/*"],
-	rules: {
-		"unicorn/better-regex": "off",
-	},
 }

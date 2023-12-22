@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+- Improve Readme
+
 ## 1.0.1
 
 - Remove unused deps

@@ -21,7 +21,7 @@ Early stage lib, will be improved soon with further improvements such as conside
 npm install -D eslint-plugin-biome
 ```
 
-- `.eslintrc.*`: Add `"biome"` as the last item in the `"extends"` field.
+- `.eslintrc.*`: Add `"biome"` as the last item in the `extends` field.
 
 ```json
 {
@@ -45,9 +45,20 @@ export default [
 
 ## ℹ️ Info
 
-You should use it together with [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) so formatting rules are also disabled as Biome has almost a 100% compatibility with prettier! You certainly no longer require prettier if you are using Biome.
+- In your .eslintrc, you can instead have this in `overrides`:
 
-In VSCode, to apply Biome and ESLint on save, you should have these in your settings.json:
+```
+overrides: [{
+  files: ["*.ts", "*.js", "*.tsx", "*.jsx"],
+  extends: ["biome"],
+}],
+```
+
+Being this the last item in the array, this will make sure that other existing overrides before it will have this patch applied. This also overrides any rules that may lie in the root of your .eslintrc under `rules`.
+
+- You should use it together with [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) so formatting rules are also disabled as Biome has almost a 100% compatibility with prettier! You certainly no longer require prettier if you are using Biome.
+
+- In VSCode, to apply Biome and ESLint on save, you should have these in your settings.json:
 
 ```json
 "editor.codeActionsOnSave": {
@@ -57,6 +68,11 @@ In VSCode, to apply Biome and ESLint on save, you should have these in your sett
 },
 "editor.defaultFormatter": "biomejs.biome"
 ```
+
+This package had its origin [in this discussion](https://github.com/biomejs/biome/discussions/3#discussioncomment-7876363).
+
+Thanks [DaniGuardiola
+](https://github.com/DaniGuardiola) for [your initial code](https://github.com/biomejs/biome/discussions/3#discussioncomment-7910787)!
 
 
 ## 📰 [Changelog](CHANGELOG.md)
