@@ -1,6 +1,3 @@
 {
   "extends": "@sindresorhus/tsconfig",
-  "compilerOptions": {
-    "types": ["bun-types"]
-  }
 }

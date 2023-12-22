@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0
+
+- Fix missing plugin name in the start of the rule name.
+- Remove Rust Clippy rules from output as they aren't related.
+
 ## 1.0.5-6
 
 - Fix wrong command to install the package in the README. It was written `eslint-plugin-biome` instead of `eslint-config-biome`.

@@ -1,37 +1,37 @@
 {
-	"name": "eslint-config-biome",
-	"version": "1.0.6",
-	"description": "Disables ESLint rules that have a recommended and equivalent Biome rule",
-	"main": "index.js",
-	"scripts": {
-		"start": "bun --watch run src/index.ts",
-		"pre-commit": "bun test",
-		"prepare": "husky install"
-	},
-	"repository": "SrBrahma/eslint-config-biome",
-	"keywords": [
-		"biome",
-		"eslint-config",
-		"eslint",
-		"config",
-		"eslintconfig",
-		"eslintplugin",
-		"eslint-plugin",
-		"linter",
-		"lint",
-		"style"
-	],
-	"license": "MIT",
-	"files": ["index.js"],
-	"devDependencies": {
-		"@biomejs/biome": "1.4.1",
-		"@sindresorhus/tsconfig": "^5.0.0",
-		"@types/jsdom": "^21.1.6",
-		"bun-types": "latest",
-		"eslint-config-gev": "^3.10.5",
-		"husky": "^8.0.1",
-		"jsdom": "^23.0.1",
-		"lint-staged": "^15.2.0",
-		"typescript": "^5.3.3"
-	}
+  "name": "eslint-config-biome",
+  "version": "1.1.0",
+  "description": "Disables ESLint rules that have a recommended and equivalent Biome rule",
+  "main": "index.js",
+  "scripts": {
+    "start": "bun --watch run scripts/index.ts",
+    "pre-commit": "bun test && bun format",
+    "prepare": "husky install",
+    "format": "biome check --apply ."
+  },
+  "repository": "SrBrahma/eslint-config-biome",
+  "keywords": [
+    "biome",
+    "eslint-config",
+    "eslint",
+    "config",
+    "eslintconfig",
+    "eslintplugin",
+    "eslint-plugin",
+    "linter",
+    "lint",
+    "style"
+  ],
+  "license": "MIT",
+  "files": ["index.js"],
+  "devDependencies": {
+    "@biomejs/biome": "1.4.1",
+    "@sindresorhus/tsconfig": "^5.0.0",
+    "@types/bun": "^1.0.0",
+    "@types/jsdom": "^21.1.6",
+    "eslint-config-gev": "^3.10.5",
+    "husky": "^8.0.1",
+    "jsdom": "^23.0.1",
+    "typescript": "^5.3.3"
+  }
 }
