@@ -4,13 +4,8 @@
     "indentWidth": 2,
     "indentStyle": "space"
   },
-  "organizeImports": {
-    "enabled": true
-  },
   "linter": {
-    "enabled": true,
     "rules": {
-      "recommended": true,
       "complexity": {
         "noForEach": "off"
       }

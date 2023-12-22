@@ -4,10 +4,11 @@
   "description": "Disables ESLint rules that have a recommended and equivalent Biome rule",
   "main": "index.js",
   "scripts": {
-    "format": "biome check --apply-unsafe .",
+    "format:check": "eslint . && biome check .",
+    "format": "eslint --fix biome check --apply-unsafe .",
     "tsw": "tsc --watch --noEmit",
     "typecheck": "tsc --noEmit",
-    "pre-commit": "bun typecheck && bun test && bun format",
+    "pre-commit": "bun format:check && bun typecheck && bun test",
     "prepare": "husky install",
     "test:watch": "bun test --watch",
     "watch": "bun --watch run scripts/index.ts",

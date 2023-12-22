@@ -5,6 +5,7 @@ import { spawnSync } from "bun"
 
 const rootPath = path.resolve(import.meta.dir, "..")
 const indexJsPath = path.resolve(rootPath, "index.js")
+const indexJsContent = fs.readFileSync(indexJsPath, "utf-8")
 
 test("index.js exists", () => {
   expect(fs.existsSync(indexJsPath)).toBeTrue()
@@ -28,7 +29,10 @@ test("index.js has rules from different plugins and includes extra rules", () =>
     "unicorn/no-instanceof-array",
     "simple-import-sort/imports",
   ]
-  const indexJsContent = fs.readFileSync(indexJsPath, "utf-8")
 
   expect(rulesToCheck.every((rule) => indexJsContent.includes(rule))).toBeTrue()
+})
+
+test("TS extensions should be disabled automatically", () => {
+  // const rulesToCheck = ["default-param-last"]
 })

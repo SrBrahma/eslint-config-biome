@@ -1,16 +1,19 @@
-# eslint-config-biome
-
 <div align="center">
 
 [![npm](https://img.shields.io/npm/v/eslint-config-biome)](https://www.npmjs.com/package/eslint-config-biome)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-<!--- [![npm](https://img.shields.io/npm/dm/eslint-config-biome)](https://www.npmjs.com/package/eslint-config-biome) -->
+
+# eslint-config-biome
+
+<img src="logo.svg" alt="logo" width="200"/>
+
+
 
 </div>
 
 <br/>
 
-Disables ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/), allowing the simultaneous use of ESLint and Biome. 
+Disables ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/), allowing the simultaneous use of ESLint and Biome.
 
 ## 💿 Installation
 
@@ -33,7 +36,7 @@ npm install -D eslint-config-biome
 
     ```js
     import eslintConfigBiome from "eslint-config-biome";
-    
+
     export default [
       otherConfigs,
       eslintConfigBiome,
@@ -67,7 +70,7 @@ npm install -D eslint-config-biome
     ```
 
 - Soon there will be a npx tool to disable ESLint rules based on your biome config file, so non-recommended biome rules will also be considered.
-  
+
 This package had its origin [in this discussion](https://github.com/biomejs/biome/discussions/3#discussioncomment-7876363). Thanks [DaniGuardiola
 ](https://github.com/DaniGuardiola) for [your initial code](https://github.com/biomejs/biome/discussions/3#discussioncomment-7910787)!
 
