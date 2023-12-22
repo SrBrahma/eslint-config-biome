@@ -14,7 +14,7 @@
 ## 💿 Installation
 
 ```bash
-npm install -D eslint-config-biome # or you preferred package manager ;)
+npm install -D eslint-config-biome # or your preferred package manager ;)
 ```
 
 - `.eslintrc.*`: Add `"biome"` as the last item in the `extends` field.
