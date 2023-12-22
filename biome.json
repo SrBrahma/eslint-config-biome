@@ -20,5 +20,6 @@
     "formatter": {
       "semicolons": "asNeeded"
     }
-  }
+  },
+  "files": { "ignore": ["index.js"] }
 }

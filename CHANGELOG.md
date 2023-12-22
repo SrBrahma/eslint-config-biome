@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.0
+
+- Added `"simple-import-sort/imports": "off"`.
+- Added some tests for improved maturity of this package
+
 ## 1.1.0
 
 - Fix missing plugin name in the start of the rule name.

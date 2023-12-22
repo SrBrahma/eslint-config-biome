@@ -1,7 +1,7 @@
+// Code based on https://github.com/biomejs/biome/discussions/3#discussioncomment-7910787. Thanks, Dani Guardiola!
+
 import fs from "fs"
 import { JSDOM } from "jsdom"
-
-// Code based on https://github.com/biomejs/biome/discussions/3#discussioncomment-7910787. Thanks, Dani Guardiola!
 
 const getTdString = (row: Element, column: number) =>
   (
@@ -9,6 +9,7 @@ const getTdString = (row: Element, column: number) =>
   ).textContent?.trim()
 
 type Plugin = { id: string; prefix: string }
+
 /**
  * Returns the ESLint rules for the equivalent Biome's rules that are recommended (proof of concept for now)
  */
@@ -75,13 +76,16 @@ ${rules.map((rule) => `    "${rule}": "off",`).join("\n")}
 `
 
   fs.writeFileSync("index.js", text)
-
-  // Lint it! This is mainly to remove non required quotes. We could do some regex check but whatever!
-  Bun.spawnSync(["bunx", "biome", "check", "--apply-unsafe", "index.js"])
 }
 
+const extraRulesToDisable = ["simple-import-sort/imports"]
+
 const main = async () => {
-  writeFile(await getEslintEquivalentRules())
+  const rules = [...(await getEslintEquivalentRules()), ...extraRulesToDisable]
+
+  writeFile(rules)
+
+  console.log("Generated index.js!")
 }
 
 await main()

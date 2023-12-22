@@ -9,7 +9,7 @@ module.exports = {
     "default-case-last": "off",
     "default-param-last": "off",
     "dot-notation": "off",
-    eqeqeq: "off",
+    "eqeqeq": "off",
     "for-direction": "off",
     "getter-return": "off",
     "no-async-promise-executor": "off",
@@ -133,5 +133,6 @@ module.exports = {
     "unicorn/no-typeof-undefined": "off",
     "unicorn/no-useless-switch-case": "off",
     "unicorn/prefer-array-flat-map": "off",
-  },
+    "simple-import-sort/imports": "off",
+  }
 }

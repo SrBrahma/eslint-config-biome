@@ -1,13 +1,17 @@
 {
   "name": "eslint-config-biome",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Disables ESLint rules that have a recommended and equivalent Biome rule",
   "main": "index.js",
   "scripts": {
-    "start": "bun --watch run scripts/index.ts",
-    "pre-commit": "bun test && bun format",
+    "format": "biome check --apply-unsafe .",
+    "tsw": "tsc --watch --noEmit",
+    "typecheck": "tsc --noEmit",
+    "pre-commit": "bun typecheck && bun test && bun format",
     "prepare": "husky install",
-    "format": "biome check --apply ."
+    "test:watch": "bun test --watch",
+    "watch": "bun --watch run scripts/index.ts",
+    "start": "bun run scripts/index.ts"
   },
   "repository": "SrBrahma/eslint-config-biome",
   "keywords": [
