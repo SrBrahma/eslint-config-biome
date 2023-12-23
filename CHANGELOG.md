@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.3.0
+
+- Now relevant [TS Extension rules](https://typescript-eslint.io/rules/#extension-rules) are added automatically to the index.js. These were added:
+
+    ```json
+    "@typescript-eslint/dot-notation": "off",
+    "@typescript-eslint/no-loss-of-precision": "off",
+    "@typescript-eslint/no-dupe-class-members": "off",
+    "@typescript-eslint/default-param-last": "off",
+    "@typescript-eslint/no-useless-constructor": "off",
+    "@typescript-eslint/no-redeclare": "off",
+    ```
+
+    Thank you [Nicolas](https://discord.com/channels/1132231889290285117/1132231889911029825/1187781046167666790) for the idea!
+- Added an awesome logo to the project ;)
+
 ## 1.2.0
 
 - Added `"simple-import-sort/imports": "off"`.

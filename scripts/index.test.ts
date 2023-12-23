@@ -7,14 +7,10 @@ const rootPath = path.resolve(import.meta.dir, "..")
 const indexJsPath = path.resolve(rootPath, "index.js")
 const indexJsContent = fs.readFileSync(indexJsPath, "utf-8")
 
-test("index.js exists", () => {
-  expect(fs.existsSync(indexJsPath)).toBeTrue()
-})
-
 test("index.js is a valid file and can be used by eslint", () => {
   // In the root there is a .eslintrc that uses the index.js in the extends.
   expect(
-    spawnSync(["bunx", "eslint", "./scripts/index.ts"], {
+    spawnSync(["bunx", "--bun", "eslint", "scripts/index.ts"], {
       cwd: rootPath,
     }).success,
   ).toBeTrue()
@@ -33,6 +29,11 @@ test("index.js has rules from different plugins and includes extra rules", () =>
   expect(rulesToCheck.every((rule) => indexJsContent.includes(rule))).toBeTrue()
 })
 
-test("TS extensions should be disabled automatically", () => {
-  // const rulesToCheck = ["default-param-last"]
+test("TS extensions should be added to index.js", () => {
+  const rulesToCheck = [
+    "@typescript-eslint/no-redeclare",
+    "@typescript-eslint/default-param-last",
+  ]
+
+  expect(rulesToCheck.every((rule) => indexJsContent.includes(rule))).toBeTrue()
 })
