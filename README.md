@@ -7,7 +7,7 @@
 
 <h4>
 
-Disables ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/), allowing the<br/>
+Disables ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/) rule, allowing the<br/>
 simultaneous use of Biome and ESLint.
 
 </h4>
