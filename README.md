@@ -34,7 +34,7 @@ npm install -D eslint-config-biome # or your preferred package manager ;)
     }
     ```
 
-- `eslint.config.js`: Import `eslint-config-biome` and have it as the last item in the configuration array
+- Or `eslint.config.js`: Import `eslint-config-biome` and have it as the last item in the configuration array
 
     ```js
     import eslintConfigBiome from "eslint-config-biome";
