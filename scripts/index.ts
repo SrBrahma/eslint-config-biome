@@ -75,7 +75,10 @@ const getTsExtensionsForRules = (rules: Array<string>): Array<string> => {
         "node_modules/@typescript-eslint/eslint-plugin/dist/rules",
       ),
     ),
-  ].map((s) => s.replace(".js", ""))
+  ]
+    .map((s) => s.replace(".js", ""))
+    // Sort to avoid diffs
+    .toSorted()
 
   const rulesToExtend = tsExtensionRules.filter((tsExtensionRule) =>
     rules.includes(tsExtensionRule),

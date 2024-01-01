@@ -134,11 +134,11 @@ module.exports = {
     "unicorn/no-useless-switch-case": "off",
     "unicorn/prefer-array-flat-map": "off",
     "simple-import-sort/imports": "off",
-    "@typescript-eslint/dot-notation": "off",
-    "@typescript-eslint/no-loss-of-precision": "off",
-    "@typescript-eslint/no-dupe-class-members": "off",
     "@typescript-eslint/default-param-last": "off",
-    "@typescript-eslint/no-useless-constructor": "off",
+    "@typescript-eslint/dot-notation": "off",
+    "@typescript-eslint/no-dupe-class-members": "off",
+    "@typescript-eslint/no-loss-of-precision": "off",
     "@typescript-eslint/no-redeclare": "off",
+    "@typescript-eslint/no-useless-constructor": "off",
   }
 }
