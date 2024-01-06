@@ -4,7 +4,7 @@
 
 - `eslint-config-prettier` is now added automatically. You can remove it from your dependencies and your eslint config.
 
-- Updated README so setup using .eslintrc.* suggests `"overrides"` instead of `"extends"`
+- Updated README so setups using .eslintrc.* suggests `"overrides"` instead of `"extends"`
 
 ## 1.3.0
 
