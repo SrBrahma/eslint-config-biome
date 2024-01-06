@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.0
+
+- `eslint-config-prettier` is now added automatically. You can remove it from your dependencies and your eslint config.
+
+- Updated README so setup using .eslintrc.* suggests `"overrides"` instead of `"extends"`
+
 ## 1.3.0
 
 - Now relevant [TS Extension rules](https://typescript-eslint.io/rules/#extension-rules) are added automatically to the index.js. These were added:

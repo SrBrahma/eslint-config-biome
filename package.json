@@ -1,11 +1,11 @@
 {
   "name": "eslint-config-biome",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Disables ESLint rules that have a recommended and equivalent Biome rule",
   "main": "index.js",
   "scripts": {
-    "format:check": "eslint . && biome check .",
-    "format": "eslint --fix biome check --apply-unsafe .",
+    "format:check": "biome check . && eslint .",
+    "format": "biome check --apply-unsafe . && eslint --fix",
     "tsw": "tsc --watch --noEmit",
     "typecheck": "tsc --noEmit",
     "pre-commit": "bun format:check && bun typecheck && bun test",

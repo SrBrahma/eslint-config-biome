@@ -2,7 +2,7 @@
   "typescript.preferences.importModuleSpecifierEnding": "js",
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.eslint": true,
     "source.organizeImports.biome": "explicit",
     "quickfix.biome": "explicit"
   },

@@ -23,14 +23,17 @@ simultaneous use of Biome and ESLint.
 npm install -D eslint-config-biome # or your preferred package manager ;)
 ```
 
-- `.eslintrc.*`: Add `"biome"` as the last item in the `extends` field.
+- `.eslintrc.*`: Add the following as the last item in the `"overrides"` array. Create it if necessary.
 
     ```json
     {
-      "extends": [
-        "other-configs",
-        "biome"
-      ]
+      "overrides": [
+        // other overrides,
+        {
+          files: ["*.ts", "*.js", "*.tsx", "*.jsx"],
+          extends: ["biome"],
+        }
+      ],
     }
     ```
 
@@ -40,40 +43,38 @@ npm install -D eslint-config-biome # or your preferred package manager ;)
     import eslintConfigBiome from "eslint-config-biome";
 
     export default [
-      otherConfigs,
+      // other configs,
       eslintConfigBiome,
     ];
     ```
 
 ## ℹ️ Info
 
-- In your .eslintrc, you can instead have this in `overrides`:
-
-    ```
-    "overrides": [{
-      files: ["*.ts", "*.js", "*.tsx", "*.jsx"],
-      extends: ["biome"],
-    }],
-    ```
-
-    - Being it the last item in the array, this makes other existing overrides to have this patch applied. This also overrides any rules that may lie in the root of your .eslintrc under `rules`.
-
-- You should use it together with [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) so formatting rules are also disabled as Biome has almost 100% compatibility with prettier. It may eventually be integrated into this package, so you won't need to also install it.
-
-- In VSCode, to apply Biome and ESLint on save, you should have these in your settings.json:
+- In VSCode, to apply Biome and ESLint on save, you should have these in your project's `.vscode/settings.json`:
 
     ```json
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": "explicit",
-      "source.organizeImports.biome": "explicit",
-      "quickfix.biome": "explicit"
-    },
-    "editor.defaultFormatter": "biomejs.biome"
+    {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.organizeImports.biome": "explicit",
+        "quickfix.biome": "explicit"
+      },
+      "editor.defaultFormatter": "biomejs.biome"
+    }
     ```
 
-- Soon there will be a npx tool to disable ESLint rules based on your biome config file, so non-recommended biome rules will also be considered.
+- For package.json scripts and CI, I recommend running `biome` before `eslint` for faster failure detection.
 
-This package had its origin [in this discussion](https://github.com/biomejs/biome/discussions/3#discussioncomment-7876363). Thanks [DaniGuardiola
+  ```json
+  "scripts": {
+    "format:check": "biome check . && eslint .",
+    "format": "biome check --apply-unsafe . && eslint --fix",
+  }
+  ```
+
+- Since v1.4.0, this package includes [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier), so formatting rules are also disabled as Biome has almost full compatibility with prettier. [Attribution](ATTRIBUTION.md). Its installation is no longer required and it can be removed from your project and your eslint config file.
+
+This package had its origin [in this discussion](https://github.com/biomejs/biome/discussions/3#discussioncomment-7876363). Also, thanks [DaniGuardiola
 ](https://github.com/DaniGuardiola) for [your initial code](https://github.com/biomejs/biome/discussions/3#discussioncomment-7910787)!
 
 

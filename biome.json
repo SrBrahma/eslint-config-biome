@@ -16,5 +16,5 @@
       "semicolons": "asNeeded"
     }
   },
-  "files": { "ignore": ["index.js"] }
+  "files": { "ignore": ["index.js", "eslint-config-prettier.js"] }
 }

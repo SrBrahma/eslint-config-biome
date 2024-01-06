@@ -1,5 +1,9 @@
-// Code initially based on the html tables extraction: https://github.com/biomejs/biome/discussions/3#discussioncomment-7910787.
-// Thanks, Dani Guardiola!
+/**
+ * Code initially based on the html tables extraction: https://github.com/biomejs/biome/discussions/3#discussioncomment-7910787.
+ * Thanks, Dani Guardiola!
+ *
+ * Attribution for eslint-config-prettier is available at the ATTRIBUTION.md and in the eslint-config-prettier.js.
+ */
 
 import fs from "fs"
 import path from "path"
@@ -7,6 +11,11 @@ import { JSDOM } from "jsdom"
 
 const extraRulesToDisable = ["simple-import-sort/imports"]
 const rootPath = path.resolve(import.meta.dir, "..")
+
+const filenames = {
+  index: "index.js",
+  prettier: "eslint-config-prettier.js",
+}
 
 const getTdString = (row: Element, column: number) =>
   (
@@ -54,8 +63,7 @@ const getEslintEquivalentRules = async (): Promise<Array<string>> => {
     { id: "eslint-plugin-unicorn", prefix: "unicorn/" },
   ]
 
-  const url = "https://github.com/biomejs/biome/discussions/3"
-  const response = await fetch(url)
+  const response = await fetch("https://github.com/biomejs/biome/discussions/3")
   const text = await response.text()
   const dom = new JSDOM(text)
   const document = dom.window.document
@@ -77,8 +85,7 @@ const getTsExtensionsForRules = (rules: Array<string>): Array<string> => {
     ),
   ]
     .map((s) => s.replace(".js", ""))
-    // Sort to avoid diffs
-    .toSorted()
+    .toSorted() // Sort to avoid diffs
 
   const rulesToExtend = tsExtensionRules.filter((tsExtensionRule) =>
     rules.includes(tsExtensionRule),
@@ -90,19 +97,39 @@ const getTsExtensionsForRules = (rules: Array<string>): Array<string> => {
 }
 
 const writeFile = (rules: Array<string>) => {
-  const text = `/**
+  fs.writeFileSync(
+    filenames.index,
+    `/**
  * File automatically created by scripts/index.ts.
  *
  * These are ESLint rules that have corresponding and recommended Biome rules.
  */
 module.exports = {
+  extends: ["./${filenames.prettier}"],
   rules: {
 ${rules.map((rule) => `    "${rule}": "off",`).join("\n")}
   }
 }
-`
+`,
+  )
+}
 
-  fs.writeFileSync("index.js", text)
+const createPrettierFile = async () => {
+  const response = await fetch(
+    "https://raw.githubusercontent.com/prettier/eslint-config-prettier/main/index.js",
+  )
+  const attribution = `/**
+ * eslint-config-prettier © 2017-2023 Simon Lydell and contributors
+ * https://github.com/prettier/eslint-config-prettier
+ *
+ * This code is licensed under the MIT License (MIT).
+ *
+ * File automatically created by scripts/index.ts.
+ */
+`
+  const text = attribution + (await response.text())
+
+  fs.writeFileSync(filenames.prettier, text)
 }
 
 const main = async () => {
@@ -111,8 +138,9 @@ const main = async () => {
   const rulesNoDuplicates = [...new Set(rulesWithTsExtends)]
 
   writeFile(rulesNoDuplicates)
+  await createPrettierFile()
 
-  console.log("Generated index.js!")
+  console.log(`Generated ${filenames.index} & ${filenames.prettier}!`)
 }
 
 await main()
