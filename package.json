@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-biome",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Disables ESLint rules that have a recommended and equivalent Biome rule",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,7 @@
     "style"
   ],
   "license": "MIT",
-  "files": ["index.js"],
+  "files": ["index.js", "eslint-config-prettier.js"],
   "devDependencies": {
     "@biomejs/biome": "1.4.1",
     "@sindresorhus/tsconfig": "^5.0.0",

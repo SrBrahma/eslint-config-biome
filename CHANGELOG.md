@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.1
+
+- Missing eslint-config-prettier.js file in bundle
+
 ## 1.4.0
 
 - `eslint-config-prettier` is now added automatically. You can remove it from your dependencies and your eslint config.
