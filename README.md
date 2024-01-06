@@ -25,7 +25,7 @@ npm install -D eslint-config-biome # or your preferred package manager ;)
 
 - `.eslintrc.*`: Add the following as the last item in the `"overrides"` array. Create it if necessary.
 
-    ```json
+    ```json5
     {
       "overrides": [
         // other overrides,
