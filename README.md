@@ -7,8 +7,7 @@
 
 <h4>
 
-Disables ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/) rule, allowing the<br/>
-simultaneous use of Biome and ESLint.
+Disables ESLint rules that have an [**equivalent and recommended**](https://github.com/biomejs/biome/discussions/3) [Biome](https://biomejs.dev/) rule, allowing the simultaneous use of Biome and ESLint.
 
 </h4>
 
@@ -68,7 +67,7 @@ npm install -D eslint-config-biome # or your preferred package manager ;)
   ```json
   "scripts": {
     "format:check": "biome check . && eslint .",
-    "format": "biome check --apply-unsafe . && eslint --fix",
+    "format": "biome check --apply-unsafe . && eslint --fix .",
   }
   ```
 
