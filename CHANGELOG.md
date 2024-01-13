@@ -1,5 +1,10 @@
 # Changelog
 
+
+## 1.5.1
+
+- Updated for Biome v1.5.1
+
 ## 1.4.1
 
 - Missing eslint-config-prettier.js file in bundle
