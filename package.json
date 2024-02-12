@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-biome",
-  "version": "1.5.1",
+  "version": "1.5.3",
   "description": "Disables ESLint rules that have a recommended and equivalent Biome rule",
   "main": "index.js",
   "scripts": {

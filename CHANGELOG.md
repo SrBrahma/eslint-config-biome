@@ -1,6 +1,11 @@
 # Changelog
 
 
+## 1.5.3
+
+- Updated for Biome v1.5.3
+- Now using https://biomejs.dev/linter/rules/ together with https://biomejs.dev/linter/rules-sources/ instead of https://github.com/biomejs/biome/discussions/3 as source of truth.
+
 ## 1.5.1
 
 - Updated for Biome v1.5.1
