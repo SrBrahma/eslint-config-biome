@@ -1,6 +1,8 @@
 import { JSDOM } from "jsdom"
 
-export const getRecommendedBiomeRules = async (): Promise<Array<string>> => {
+export const fetchRecommendedBiomeRulesFromDocs = async (): Promise<
+  Array<string>
+> => {
   const response = await fetch("https://biomejs.dev/linter/rules/")
   const html = await response.text()
 
@@ -24,7 +26,9 @@ export const getRecommendedBiomeRules = async (): Promise<Array<string>> => {
 
 type Equivalency = { eslint: string; biome: string }
 
-export const getEquivalentRules = async (): Promise<Array<Equivalency>> => {
+const pluginBlacklist = ["Clippy"]
+
+const fetchEquivalentRulesFromDocs = async (): Promise<Array<Equivalency>> => {
   const response = await fetch("https://biomejs.dev/linter/rules-sources/")
   const html = await response.text()
 
@@ -33,16 +37,19 @@ export const getEquivalentRules = async (): Promise<Array<Equivalency>> => {
 
   const tables = document.querySelectorAll("table")
 
-  const rowsTexts = [...tables].flatMap((table) => {
+  const rowsTexts: Array<Array<string>> = [...tables].flatMap((table) => {
     const tableHeaders = Array.from(table.querySelectorAll("th")).map(
       (th) => th.textContent?.trim() ?? "",
     )
+
     const pluginName = tableHeaders[0]
       ?.split(" ")[0]
       ?.replace("eslint-plugin-", "")
-      ?.replace("typescript", "@typescript-eslint")
+      ?.replace("typescript-eslint", "@typescript-eslint")
 
     if (!pluginName) throw new Error("Invalid plugin")
+
+    if (pluginBlacklist.includes(pluginName)) return [[]]
 
     const prefix = ["Clippy", "ESLint"].includes(pluginName)
       ? ""
@@ -73,4 +80,18 @@ export const getEquivalentRules = async (): Promise<Array<Equivalency>> => {
   }))
 
   return equivalentRules
+}
+
+export const getEquivalentRulesFromDocs = async (): Promise<Array<string>> => {
+  const recommendedBiomeRules = await fetchRecommendedBiomeRulesFromDocs()
+  const equivalentRules = await fetchEquivalentRulesFromDocs()
+
+  return recommendedBiomeRules
+    .map(
+      (biomeRule) =>
+        equivalentRules.find(
+          (equivalentRule) => equivalentRule.biome === biomeRule,
+        )?.eslint,
+    )
+    .filter(Boolean) as Array<string>
 }

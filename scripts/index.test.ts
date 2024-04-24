@@ -1,12 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+
 import { expect, test } from "bun:test"
-import fs from "fs"
-import path from "path"
+import fs from "node:fs"
+import path from "node:path"
 import { spawnSync } from "bun"
 
-const rootPath = path.resolve(import.meta.dir, "..")
+const rootPath = path.resolve(__dirname, "..")
 const indexPath = path.resolve(rootPath, "index.js")
 const prettierPath = path.resolve(rootPath, "eslint-config-prettier.js")
 const indexContent = fs.readFileSync(indexPath, "utf-8")
+const disabledRules = Object.keys(
+  (require(indexPath) as { rules: Record<string, string> }).rules,
+)
 const prettierContent = fs.readFileSync(prettierPath, "utf-8")
 
 test("index.js is a valid file and can be used by eslint", () => {
@@ -28,7 +33,8 @@ test("index.js has rules from different plugins and includes extra rules", () =>
     "simple-import-sort/imports",
   ]
 
-  expect(rulesToCheck.every((rule) => indexContent.includes(rule))).toBeTrue()
+  expect(disabledRules).toEqual(expect.arrayContaining(rulesToCheck))
+  expect(disabledRules.length).toBeGreaterThan(150) // 165 last time
 })
 
 test("TS extensions should be added to index.js", () => {
@@ -37,10 +43,15 @@ test("TS extensions should be added to index.js", () => {
     "@typescript-eslint/default-param-last",
   ]
 
-  expect(rulesToCheck.every((rule) => indexContent.includes(rule))).toBeTrue()
+  expect(disabledRules).toEqual(expect.arrayContaining(rulesToCheck))
 })
 
 test("eslint-config-prettier is used and is valid", () => {
   expect(indexContent).toContain('extends: ["./eslint-config-prettier.js"],')
   expect(prettierContent).toContain('"react/jsx-indent": "off"')
+})
+
+test("doesnt include clippy rules", () => {
+  expect(disabledRules).not.toContain("if_not_else")
+  expect(disabledRules).not.toContain("eq_op")
 })

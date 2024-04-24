@@ -1,5 +1,5 @@
-import path from "path"
-import { rootPath } from "./consts.js"
+import path from "node:path"
+import { rootPath } from "./consts"
 
 /** https://typescript-eslint.io/rules/#extension-rules */
 export const getTsExtensionsForRules = (

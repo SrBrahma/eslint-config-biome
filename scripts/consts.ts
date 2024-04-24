@@ -1,10 +1,10 @@
-import path from "path"
+import path from "node:path"
 
 export const filenames = {
   index: "index.js",
   prettier: "eslint-config-prettier.js",
 }
-export const rootPath = path.resolve(import.meta.dir, "..")
+export const rootPath = path.resolve(__dirname, "..")
 
 export const extraRulesToDisable = [
   "simple-import-sort/imports",

@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.7.1
+
+- Updated Biome to 1.7.1; added the following disables:
+
+```json
+"no-eval": "off",
+"no-global-assign": "off",
+"no-lone-blocks": "off",
+"no-misleading-character-class": "off",
+"no-unneeded-ternary": "off",
+"no-use-before-define": "off",
+"@mysticatea/eslint-plugin/no-this-in-static": "off",
+"@typescript-eslint/consistent-type-exports": "off",
+"@typescript-eslint/consistent-type-imports": "off",
+"@typescript-eslint/no-import-type-side-effects": "off",
+"@typescript-eslint/no-unnecessary-type-arguments": "off",
+"@typescript-eslint/prefer-function-type": "off",
+"jest/max-nested-describe": "off",
+"jest/no-duplicate-hooks": "off",
+"jest/no-export": "off",
+"jest/no-focused-tests": "off",
+"react/jsx-key": "off",
+"unicorn/no-thenable": "off",
+"unicorn/prefer-node-protocol": "off",
+"unicorn/prefer-number-properties": "off",
+```
 
 ## 1.5.3
 

@@ -1,5 +1,5 @@
-import fs from "fs"
-import { filenames } from "./consts.js"
+import fs from "node:fs"
+import { filenames } from "./consts"
 
 // Done by GPT. No way I would do that boring shit by hand.
 export const sortRules = (rules: Array<string>) =>

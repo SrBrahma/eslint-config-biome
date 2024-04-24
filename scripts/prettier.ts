@@ -1,5 +1,5 @@
-import fs from "fs"
-import { filenames } from "./consts.js"
+import fs from "node:fs"
+import { filenames } from "./consts"
 
 export const createPrettierFile = async () => {
   const response = await fetch(
