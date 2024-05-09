@@ -1,8 +1,8 @@
 # Changelog
 
-## 1.7.1
+## 1.7.3
 
-- Updated Biome to 1.7.1; added the following disables:
+- Updated Biome to 1.7.3; added the following disables:
 
 ```json
 "no-eval": "off",
