@@ -31,7 +31,7 @@ export const sortRules = (rules: Array<string>) =>
     return a.localeCompare(b)
   })
 
-export const writeFile = (rules: Array<string>) => {
+export const writeMainFile = (rules: Array<string>) => {
   fs.writeFileSync(
     filenames.index,
     `/**
@@ -40,8 +40,8 @@ export const writeFile = (rules: Array<string>) => {
  * These are ESLint rules that have corresponding and recommended Biome rules.
  */
 module.exports = {
-  extends: ["./${filenames.prettier}"],
   rules: {
+    ...require("./eslint-config-prettier.js").rules,
 ${rules.map((rule) => `    "${rule}": "off",`).join("\n")}
   }
 }

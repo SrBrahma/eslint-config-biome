@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.8.3
+
+- Fix issue with ESLint's Flat Config
+
 ## 1.7.3
 
 - Updated Biome to 1.7.3; added the following disables:

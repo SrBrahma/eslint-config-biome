@@ -5,7 +5,7 @@ import { getEquivalentRulesFromDocs } from "./fetchFromDocs"
 import { getEslintEquivalentRulesFromGithub } from "./fetchFromGithub.js"
 import { createPrettierFile } from "./prettier"
 import { getJsBaseRules, getTsExtensionsForRules } from "./tsExtensions"
-import { sortRules, writeFile } from "./utils"
+import { sortRules, writeMainFile } from "./utils"
 
 const main = async () => {
   const rules = [
@@ -22,7 +22,7 @@ const main = async () => {
 
   const rulesNoDuplicates = [...new Set(rulesWithTsExtends)]
 
-  writeFile(sortRules(rulesNoDuplicates))
+  writeMainFile(sortRules(rulesNoDuplicates))
   await createPrettierFile()
 
   console.log(`Generated ${filenames.index} & ${filenames.prettier}!`)

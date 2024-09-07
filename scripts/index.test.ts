@@ -8,11 +8,15 @@ import { spawnSync } from "bun"
 const rootPath = path.resolve(__dirname, "..")
 const indexPath = path.resolve(rootPath, "index.js")
 const prettierPath = path.resolve(rootPath, "eslint-config-prettier.js")
-const indexContent = fs.readFileSync(indexPath, "utf-8")
 const disabledRules = Object.keys(
   (require(indexPath) as { rules: Record<string, string> }).rules,
 )
 const prettierContent = fs.readFileSync(prettierPath, "utf-8")
+
+// @ts-expect-error
+import prettierJs from "../eslint-config-prettier.js"
+// @ts-expect-error
+import indexJs from "../eslint-config-prettier.js"
 
 test("index.js is a valid file and can be used by eslint", () => {
   // In the root there is a .eslintrc that uses the index.js in the extends.
@@ -47,8 +51,13 @@ test("TS extensions should be added to index.js", () => {
 })
 
 test("eslint-config-prettier is used and is valid", () => {
-  expect(indexContent).toContain('extends: ["./eslint-config-prettier.js"],')
   expect(prettierContent).toContain('"react/jsx-indent": "off"')
+  expect((prettierJs as { rules: Record<string, unknown> }).rules).toContainKey(
+    "react/jsx-indent",
+  )
+  expect((indexJs as { rules: Record<string, unknown> }).rules).toContainKey(
+    "react/jsx-indent",
+  )
 })
 
 test("doesnt include clippy rules", () => {

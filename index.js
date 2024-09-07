@@ -4,8 +4,8 @@
  * These are ESLint rules that have corresponding and recommended Biome rules.
  */
 module.exports = {
-  extends: ["./eslint-config-prettier.js"],
   rules: {
+    ...require("./eslint-config-prettier.js").rules,
     "constructor-super": "off",
     "default-case-last": "off",
     "default-param-last": "off",
