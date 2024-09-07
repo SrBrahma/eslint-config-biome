@@ -3,7 +3,8 @@
 <br/>
 <img src="logo.svg" alt="logo" width="250"/>
 
-# eslint-config-biome [![npm](https://img.shields.io/npm/v/eslint-config-biome)](https://www.npmjs.com/package/eslint-config-biome) [![npm](https://img.shields.io/npm/dw/eslint-config-biome)](https://www.npmjs.com/package/eslint-config-biome)
+# eslint-config-biome
+[![npm](https://img.shields.io/npm/v/eslint-config-biome)](https://www.npmjs.com/package/eslint-config-biome) [![npm](https://img.shields.io/npm/dw/eslint-config-biome)](https://www.npmjs.com/package/eslint-config-biome)
 
 
 <h4>
