@@ -41,11 +41,11 @@ npm install -D eslint-config-biome # or your preferred package manager ;)
 - Or `eslint.config.js`: Import `eslint-config-biome` and have it as the last item in the configuration array
 
     ```js
-    import eslintConfigBiome from "eslint-config-biome";
+    import biome from "eslint-config-biome";
 
     export default [
       // other configs,
-      eslintConfigBiome,
+      biome,
     ];
     ```
 
