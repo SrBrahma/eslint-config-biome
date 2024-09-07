@@ -2,7 +2,7 @@
 
 ## 1.8.3
 
-- Fix issue with ESLint's Flat Config
+- Fix issue with ESLint's Flat Config ([#7](https://github.com/SrBrahma/eslint-config-biome/issues/7)).
 
 ## 1.7.3
 
