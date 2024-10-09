@@ -1,18 +1,13 @@
 /** Attribution for eslint-config-prettier is available at the ATTRIBUTION.md and in the eslint-config-prettier.js. */
 
 import { extraRulesToDisable, filenames } from "./consts"
-import { getEquivalentRulesFromDocs } from "./fetchFromDocs"
-import { getEslintEquivalentRulesFromGithub } from "./fetchFromGithub.js"
+import { getRulesFromJsonMetadata } from "./metadata.js"
 import { createPrettierFile } from "./prettier"
 import { getJsBaseRules, getTsExtensionsForRules } from "./tsExtensions"
 import { sortRules, writeMainFile } from "./utils"
 
 const main = async () => {
-  const rules = [
-    ...(await getEquivalentRulesFromDocs()),
-    ...extraRulesToDisable,
-    ...(await getEslintEquivalentRulesFromGithub()),
-  ]
+  const rules = [...(await getRulesFromJsonMetadata()), ...extraRulesToDisable]
 
   const rulesWithTsExtends = [
     ...rules,
@@ -21,8 +16,9 @@ const main = async () => {
   ]
 
   const rulesNoDuplicates = [...new Set(rulesWithTsExtends)]
+  const sortedRules = sortRules(rulesNoDuplicates)
 
-  writeMainFile(sortRules(rulesNoDuplicates))
+  writeMainFile(sortedRules)
   await createPrettierFile()
 
   console.log(`Generated ${filenames.index} & ${filenames.prettier}!`)

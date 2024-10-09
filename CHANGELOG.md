@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.9.3
+
+- Added a few minor ESLint rules to be disabled.
+- Now using Biome's JSON Metadata to generate this package's rules to be disabled. Many thanks, [ematipico](https://github.com/ematipico)!
+
 ## 1.8.3
 
 - Fix issue with ESLint's Flat Config ([#7](https://github.com/SrBrahma/eslint-config-biome/issues/7)).

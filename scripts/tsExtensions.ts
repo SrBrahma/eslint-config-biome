@@ -5,9 +5,9 @@ import { rootPath } from "./consts"
 export const getTsExtensionsForRules = (
   rules: Array<string>,
 ): Array<string> => {
-  const glob = new Bun.Glob("*.js")
+  const jsGlob = new Bun.Glob("*.js")
   const tsExtensionRules = [
-    ...glob.scanSync(
+    ...jsGlob.scanSync(
       path.resolve(
         rootPath,
         "node_modules/@typescript-eslint/eslint-plugin/dist/rules",
@@ -27,9 +27,9 @@ export const getTsExtensionsForRules = (
 }
 /** The Biome docs has some rules just under the Typescript table, but we also need to disable the JS base rules. */
 export const getJsBaseRules = (allRules: Array<string>): Array<string> => {
-  const glob = new Bun.Glob("*.js")
+  const jsGlob = new Bun.Glob("*.js")
   const jsRules = [
-    ...glob.scanSync(path.resolve(rootPath, "node_modules/eslint/lib/rules")),
+    ...jsGlob.scanSync(path.resolve(rootPath, "node_modules/eslint/lib/rules")),
   ]
     .map((s) => s.replace(".js", ""))
     .toSorted() // Sort to avoid diffs
