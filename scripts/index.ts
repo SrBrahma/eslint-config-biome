@@ -24,6 +24,6 @@ const main = async () => {
   console.log(`Generated ${filenames.index} & ${filenames.prettier}!`)
 }
 
-main().catch((err) => {
+main().catch((err: unknown) => {
   throw err
 })

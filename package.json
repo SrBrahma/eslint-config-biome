@@ -1,18 +1,19 @@
 {
   "name": "eslint-config-biome",
-  "version": "1.9.3",
+  "version": "1.9.4",
   "description": "Disables ESLint rules that have a recommended and equivalent Biome rule",
   "main": "index.js",
   "scripts": {
     "dev": "bun --watch run scripts/index.ts",
-    "format": "biome check --apply-unsafe . && eslint --fix . package.json",
-    "format:check": "biome check . && eslint . package.json",
+    "format": "biome check --unsafe --fix  && eslint --fix .",
+    "format:check": "biome check --unsafe && eslint .",
     "pre-commit": "bun format && bun typecheck && bun test && git add -A",
     "prepare": "husky",
     "start": "bun i && bun run scripts/index.ts",
     "test:watch": "bun test --watch",
     "tsw": "tsc --watch --noEmit",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "update-deps": "bunx npm-check-updates -i"
   },
   "files": [
     "index.js",
@@ -33,11 +34,11 @@
   ],
   "repository": "SrBrahma/eslint-config-biome",
   "devDependencies": {
-    "@biomejs/biome": "^1.9.3",
-    "@sindresorhus/tsconfig": "^5.1.1",
-    "@types/bun": "^1.1.11",
-    "eslint-config-gev": "4.5.1",
-    "husky": "^9.1.6",
-    "typescript": "^5.6.3"
+    "@biomejs/biome": "^1.9.4",
+    "@sindresorhus/tsconfig": "^7.0.0",
+    "@types/bun": "^1.1.14",
+    "eslint-config-gev": "4.6.2",
+    "husky": "^9.1.7",
+    "typescript": "^5.7.2"
   }
 }

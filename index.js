@@ -82,6 +82,7 @@ module.exports = {
     "prefer-const": "off",
     "prefer-exponentiation-operator": "off",
     "prefer-numeric-literals": "off",
+    "prefer-object-has-own": "off",
     "prefer-regex-literals": "off",
     "prefer-rest-params": "off",
     "prefer-template": "off",
